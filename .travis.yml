@@ -2,9 +2,12 @@ language: java
 script:
   - mvn test -B
 jdk:
-  - oraclejdk8
-  - oraclejdk9
-  - openjdk8
+  - openjdk11
+  - openjdk-ea
+
+matrix:
+  allow_failures:
+    - jdk: openjdk-ea
 addons:
   apt:
     packages:
